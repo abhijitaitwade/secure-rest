@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/oxm 
+		http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+
+	<!--
+		Map handlers based on HTTP paths expressed through the RequestMapping
+		annotation at the type or method level.
+	-->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+
+	<!--
+		Select an appropriate View to handle the request by comparing the
+		request media type(s) with the media type supported by the View.
+	-->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/jsp/" />
+					<property name="suffix" value=".jsp" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Configure a org.springframework.oxm.jaxb.Jaxb2Marshaller. -->
+	<oxm:jaxb2-marshaller id="marshaller"
+		contextPath="com.earldouglas.directory" />
+
+	<!-- Provide the employee XML view. -->
+	<bean name="employee"
+		class="org.springframework.web.servlet.view.xml.MarshallingView">
+		<constructor-arg ref="marshaller" />
+	</bean>
+
+	<!-- Scan for MVC controllers -->
+	<context:component-scan base-package="com.earldouglas.securerest.web" />
+
+</beans>

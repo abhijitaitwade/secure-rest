@@ -1,0 +1,6 @@
+<employee xmlns="http://www.earldouglas.com/schema/directory">
+	<id>3</id>
+	<name>Johnny McDoe</name>
+	<title>Work Man</title>
+	<salary>1234.56</salary>
+</employee>

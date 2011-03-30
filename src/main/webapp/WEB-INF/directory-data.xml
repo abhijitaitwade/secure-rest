@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean class="com.earldouglas.directory.service.DefaultEmployeeService">
+		<property name="employees" ref="employees" />
+	</bean>
+
+	<util:map id="employees">
+		<entry key="1" value-ref="employee1" />
+		<entry key="2" value-ref="employee2" />
+		<entry key="3" value-ref="employee3" />
+	</util:map>
+
+	<bean id="employee1" class="com.earldouglas.directory.Employee">
+		<property name="id" value="1" />
+		<property name="name" value="Max Power" />
+		<property name="title" value="The Leader" />
+		<property name="salary" value="640000" />
+	</bean>
+
+	<bean id="employee2" class="com.earldouglas.directory.Employee">
+		<property name="id" value="2" />
+		<property name="name" value="Number Two" />
+		<property name="title" value="Second in Command" />
+		<property name="salary" value="639999" />
+	</bean>
+
+	<bean id="employee3" class="com.earldouglas.directory.Employee">
+		<property name="id" value="3" />
+		<property name="name" value="Johnny McDoe" />
+		<property name="title" value="Work Man" />
+		<property name="salary" value="48000" />
+	</bean>
+
+</beans>

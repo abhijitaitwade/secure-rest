@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" targetNamespace="http://www.earldouglas.com/schema/directory"
+	xmlns:directory="http://www.earldouglas.com/schema/directory">
+	<xs:element name="employee">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element name="id" type="xs:integer" />
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="title" type="xs:string" />
+				<xs:element name="salary" type="xs:decimal" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
