@@ -134,7 +134,7 @@ xjc.sh -p com.earldouglas.directory directory.xsd
 
 Use of the `-p` option specifies that the reverse-engineered code shall be placed in the specified package.
 
-The result is the Employee class, with supporting JAXB 2.0 infrastructure.
+The result is the `Employee` class, with supporting JAXB 2.0 infrastructure.
 
 ```
 src/com/earldouglas/directory/
@@ -223,7 +223,7 @@ public class EmployeeController {
 
 ## Step 7) Define the web-layer view resolution behavior.
 
-A useful capability of Spring MVC is to resolve views based on the Accept header within the client's request. With a web service, it is most common that a consumer would expect to receive XML in the response, however this is not always the case. If the web service is consumed within the context of an outside HTML view, or if the consumer is simply accessing the web service from a web browser, it is more appropriate to return HTML in the response.
+A useful capability of Spring MVC is to resolve views based on the `Accept` header within the client's request. With a web service, it is most common that a consumer would expect to receive XML in the response, however this is not always the case. If the web service is consumed within the context of an outside HTML view, or if the consumer is simply accessing the web service from a web browser, it is more appropriate to return HTML in the response.
 
 Using Spring's `ContentNegotiatingViewResolver`, multiple view resolvers can be defined, each able to generate views of different content types.
 
@@ -326,9 +326,9 @@ The web service is expected to generate XML output such as the following:
 
 Testing the web service requires asserting the following:
 
-* The web service returns HTML for requests that accept text/html.
-* The web service returns XML for requests that accept application/xml.
-* The web service returns data appropriate for each role.
+* The web service returns HTML for requests that accept `text/html`
+* The web service returns XML for requests that accept `application/xml`
+* The web service returns data appropriate for each role
 
 These are all captured within a single JUnit test case.
 
