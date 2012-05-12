@@ -2,8 +2,6 @@
 
 _27 Sep 2009_
 
-Get the source code for this article: https://github.com/JamesEarlDouglas/a-secure-restful-web-service
-
 REST-style architecture lends a comfortable aspect of familiarity to web services by enforcing a somewhat strict architectural style with which we have become accustomed to in our daily use of the web. It eliminates the unpredictable and sometimes obtuse web services definitions created in analogy to arbitrary verbs. It limits the types of actions taken by a web service to those of CRUD, and the resources on which to perform such actions to those identifiable by URLs.
 
 Role-based security in web services is often overlooked as an architectural consideration, but with a REST-style architecture it follows as logically as in any web application. A web service consumer need not be a person at a terminal, but is any program, server, system, or other entity which interacts with the web service. These entities may be assigned roles analogous to those of web application users, which can be used to grant or limit access to capabilities of web services.
